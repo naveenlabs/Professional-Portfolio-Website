@@ -14,6 +14,12 @@ This is a complete, fully responsive portfolio website built from scratch as par
 
 ![Portfolio Preview](Assets/portfolio-preview.png)
 
+## 🚀 Live Demo
+
+**[View Live Website](https://hub.labs.coursera.org/connect/sharedauczasgu?forceRefresh=false&path=%2F&isLabVersioning=true)**
+
+Click the link above to see the website in action.
+
 ## Features
 
 - **5 Responsive Pages** – Home, About, Services, Projects, Contact
