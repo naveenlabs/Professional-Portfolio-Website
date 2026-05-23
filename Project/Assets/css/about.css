@@ -1,0 +1,634 @@
+/********** T I M E L I N E  S E C T I O N **********/
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+/* 
+  Timeline Heading: 
+  - Center-aligned text
+  - Fade-up animation on load
+*/
+.timeline-heading {
+  text-align: center;
+  font-size: var(--h2-font);
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  top: 20px;
+  padding: 20px 0;
+  color: var(--text-color);
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Keyframes for fade-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline heading gradient text effect */
+.timeline-heading span {
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+  Timeline Containers: 
+  - Each item animates moving down into place
+*/
+.container {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+
+/* Keyframes for move-down animation */
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Staggered delay for animations on timeline items */
+.left-container:nth-child(1),
+.right-container:nth-child(1) {
+  animation-delay: 0s;
+}
+.left-container:nth-child(2),
+.right-container:nth-child(2) {
+  animation-delay: 1s;
+}
+.left-container:nth-child(3),
+.right-container:nth-child(3) {
+  animation-delay: 2s;
+}
+.left-container:nth-child(4),
+.right-container:nth-child(4) {
+  animation-delay: 3s;
+}
+.left-container:nth-child(5),
+.right-container:nth-child(5) {
+  animation-delay: 4s;
+}
+.left-container:nth-child(6),
+.right-container:nth-child(6) {
+  animation-delay: 5s;
+}
+
+/* 
+  Text Box Styling:
+  - Positioned inside timeline items
+*/
+.text-box {
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.text-box h2 {
+  font-weight: 600;
+}
+
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Gradient text effect for headings inside timeline items */
+.container .text-box h5 {
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container .text-box p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  color: var(--ann-color);
+}
+
+/* 
+  Positioning for left and right timeline containers
+*/
+.left-container {
+  left: 0;
+}
+.right-container {
+  left: 50%;
+}
+
+/* 
+  Image Styling for timeline items
+  - Positioned absolutely within the timeline
+*/
+.container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+}
+
+.right-container img {
+  left: -20px;
+}
+
+/* 
+  Timeline vertical line:
+  - Runs through the center
+  - Animates its growth
+*/
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: var(--ann-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: moveline 6s linear forwards;
+}
+
+/* Keyframes for vertical line animation */
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* 
+  Mobile Styles: 
+  - Adjusts layout for screens up to 600px
+*/
+@media screen and (max-width: 600px) {
+  .timeline {
+    margin: 50px auto;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+    margin-top: 40px;
+  }
+  .text-box {
+    font-size: 13px;
+  }
+  .text-box small {
+    margin-bottom: 10px;
+  }
+  .right-container {
+    left: 0;
+  }
+  .left-container img,
+  .right-container img {
+    left: 10px;
+  }
+}
+
+/********** S K I L L S  S E C T I O N **********/
+
+/* 
+  Skills Section Title: 
+  - Center-aligned with fade-in animation
+*/
+.sub-title {
+  text-align: center;
+  font-size: var(--h2-font);
+  font-weight: bold;
+  padding-bottom: 70px;
+  padding-top: 30px;
+  animation: slideIn 1.5s ease-out forwards;
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient text effect for skill section title */
+.sub-title span {
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Layout for skills section */
+.skills {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -50px;
+}
+
+/* Container for skills charts and bars */
+.container1 {
+  width: 600px;
+  height: 500px;
+}
+
+.heading1 {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 50px;
+}
+
+/* 
+  Technical Bars for skills:
+  - Animated progress bars with percentages
+*/
+.bar {
+  font-size: 23px;
+}
+
+.technical-bars .bar {
+  margin: 40px 0;
+}
+
+.technical-bars .bar:first-child {
+  margin-top: 0;
+}
+
+.technical-bars .bar:last-child {
+  margin-bottom: 0;
+}
+
+.technical-bars .bar .info {
+  margin-bottom: 5px;
+}
+
+.technical-bars .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.technical-bars .bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--alt-color);
+}
+
+/* Animated growth for progress lines */
+.technical-bars .bar .progress-line span {
+  height: 100%;
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  position: absolute;
+  border-radius: 10px;
+  transform-origin: left;
+  animation: grow 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+/* Keyframes for progress line growth */
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Set the width using the specific class for each skill */
+.progress-line.web-dev span {
+  width: 90%;
+}
+.progress-line.python-ml span {
+  width: 95%;
+}
+.progress-line.frameworks span {
+  width: 90%;
+}
+.progress-line.cloud-devops span {
+  width: 88%;
+}
+.progress-line.data span {
+  width: 87%;
+}
+.progress-line.ai-ethics span {
+  width: 80%;
+}
+
+/* 
+  Percentage indicators:
+  - Positioned within bars with animations
+*/
+.progress-line span::after {
+  content: attr(data-percentage);
+  position: absolute;
+  padding: 1px 8px;
+  background-color: var(--alt-color);
+  color: var(--text-color);
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+/* Specific content for each skill percentage */
+.progress-line.web-dev span::after {
+  content: "90%";
+}
+.progress-line.python-ml span::after {
+  content: "95%";
+}
+.progress-line.frameworks span::after {
+  content: "90%";
+}
+.progress-line.cloud-devops span::after {
+  content: "88%";
+}
+.progress-line.data span::after {
+  content: "87%";
+}
+.progress-line.ai-ethics span::after {
+  content: "80%";
+}
+
+/* Arrow indicators before percentage */
+.progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: var(--alt-color);
+  top: -10px;
+  right: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+/* Animation for showing text */
+@keyframes showText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 
+  Radial Bars for skills:
+  - Animated SVG radial progress indicators
+*/
+.radial-bars {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.radial-bars .radial-bar {
+  width: 50%;
+  height: 170px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.radial-bars .radial-bar svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 120px;
+  height: 160px;
+}
+
+.radial-bars .radial-bar .progress-bar {
+  stroke-width: 10;
+  stroke: var(--alt-color);
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-progress 0.5s linear forwards;
+}
+
+.radial-bars .radial-bar .path {
+  stroke-width: 10;
+  stroke: #515ada;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-path 0.5s 0.5s linear forwards;
+}
+
+/* Animation for the radial progress-bar (alt color) */
+@keyframes animate-progress {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Animation for the radial path (purple color) */
+@keyframes animate-path {
+  100% {
+    stroke-dashoffset: 50;
+  }
+}
+
+.radial-bar .percentage {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.radial-bar .text {
+  text-align: center;
+}
+
+/* Media Queries for Skills Section */
+
+/* Adjusts layout for screens up to 768px */
+@media screen and (max-width: 768px) {
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .technical-bars {
+    margin-bottom: 150px;
+  }
+
+  .technical-bars .bar {
+    margin: 30px 0;
+  }
+
+  .technical-bars .bar .info span {
+    font-size: 15px;
+  }
+
+  .technical-bars .bar .progress-line {
+    height: 4px;
+  }
+
+  .radial-bars {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .radial-bars .radial-bar {
+    width: 48%;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .radial-bars .radial-bar svg {
+    width: 100px;
+    height: 140px;
+  }
+
+  .radial-bar .percentage {
+    font-size: 15px;
+  }
+}
+
+/* Adjusts layout for screens up to 480px */
+@media screen and (max-width: 480px) {
+  .container1 {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .technical-bars {
+    margin-bottom: 50px;
+  }
+
+  .technical-bars .bar {
+    margin: 20px 0;
+  }
+
+  .technical-bars .bar .info span {
+    font-size: 13px;
+  }
+
+  .technical-bars .bar .progress-line {
+    height: 3px;
+  }
+
+  .radial-bars {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .radial-bars .radial-bar {
+    width: 48%;
+    height: 130px;
+    margin-bottom: 15px;
+  }
+
+  .radial-bars .radial-bar svg {
+    width: 90px;
+    height: 120px;
+  }
+
+  .radial-bar .percentage {
+    font-size: 13px;
+  }
+}
+
+/* Initially pause all animations */
+.technical-bars .bar span,
+.radial-bars .radial-bar .progress-bar,
+.radial-bars .radial-bar .path,
+.sub-title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Start animations when .animate class is added */
+.technical-bars .bar span.animate {
+  opacity: 1;
+  animation: growBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.radial-bars .radial-bar .progress-bar.animate,
+.radial-bars .radial-bar .path.animate {
+  opacity: 1;
+  animation: radialAnimation 0.5s linear forwards;
+}
+
+.sub-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* Keyframes for the technical bar growth */
+@keyframes growBar {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Keyframes for the radial bars */
+@keyframes radialAnimation {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

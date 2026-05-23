@@ -1,0 +1,208 @@
+/********** S E R V I C E S  S E C T I O N **********/
+
+.service-wrapper {
+  padding: 5% 8%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+  Main heading style for the services section: 
+  - Center-aligned, large font with a fade-up animation
+*/
+.service h2 {
+  text-align: center;
+  font-size: var(--h2-font);
+  font-weight: bold;
+  margin: 0;
+  padding: 20px 0;
+  color: var(--text-color);
+  position: relative;
+  top: -100px;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* 
+  Subheading style with gradient effect for a modern look 
+*/
+.service h2 span {
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/********** S E R V I C E  C A R D S **********/
+
+/* 
+  Card style: 
+  - Background with border, smooth transition effects, and staggered animations
+*/
+.card {
+  height: 330px;
+  width: 370px;
+  background-color: var(--second-bg-color);
+  padding: 3% 8%;
+  border: 0.2px solid var(--ann-color);
+  border-radius: 8px;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+/* Staggered animation delays for card elements */
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(5) {
+  animation-delay: 1s;
+}
+.card:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* 
+  Hover effect: 
+  - Gradient overlay and transparent background
+*/
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(81, 90, 218, 0.5)
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card:hover {
+  background-color: transparent;
+  border-color: var(--ann-color);
+  transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+
+/* 
+  Icon style within the card: 
+  - Large font size with a gradient effect, changes on hover
+*/
+.card i {
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 4.8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover i {
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.6s ease-out;
+}
+
+/* 
+  Card title and description: 
+  - Consistent color scheme and alignment
+*/
+.card h2 {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.card p {
+  text-align: center;
+  color: var(--ann-color);
+  width: 100%;
+  margin: 12px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* 
+  Cards grid layout: 
+  - Responsive grid with gap for spacing between cards
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: -60px;
+}
+
+/********** M E D I A  Q U E R I E S **********/
+
+/* For Medium Devices (max-width: 1200px) */
+@media screen and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For Small Devices (max-width: 900px) */
+@media screen and (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Adjusts heading size for smaller screens */
+  h2 {
+    font-size: 3.5rem;
+  }
+}

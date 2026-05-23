@@ -1,0 +1,500 @@
+/* ********** G L O B A L  S T Y L E S ********** */
+
+/* Reset and global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: "Syne", sans-serif;
+}
+
+/* CSS Variables for colors and fonts */
+:root {
+  --bg-color: #121212;
+  --second-bg-color: #202020;
+  --text-color: #ffffff;
+  --other-color: #8b8a91;
+  --alt-color: #4b4b51;
+  --ann-color: #c7c6d3;
+
+  --h1-font: 6rem;
+  --h2-font: 3.8rem;
+  --p-font: 1.1rem;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  padding: 60px 14% 90px;
+}
+
+/* ********** H E A D E R ********** */
+
+/* Header layout and transition */
+header {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 10px 14%;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.6s ease;
+}
+
+/* Sticky header style with blur effect */
+header.sticky {
+  padding: 5px 14%;
+  background: transparent;
+  backdrop-filter: blur(25px);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  min-width: 50px;
+  max-width: 80px;
+  object-fit: contain;
+}
+
+/* ********** N A V I G A T I O N  M E N U ********** */
+
+.menulist {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation links styling */
+.menulist a {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--other-color);
+  margin: 0 30px;
+  transition: all 0.6s ease;
+}
+
+/* Hover and active state for navigation links */
+.menulist a:hover,
+.menulist a.active {
+  color: var(--text-color);
+}
+
+/* ********** M E N U  R I G H T ********** */
+
+.menu-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Button in the right menu */
+.menu-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  color: var(--bg-color);
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 13px;
+  transition: background 0.6s ease;
+}
+
+/* Hover effect for menu button */
+.menu-btn:hover {
+  background: linear-gradient(90deg, #515ada 0%, #efd5ff 100%);
+}
+
+/* ********** M O B I L E  M E N U  I C O N ********** */
+
+#menu-icon {
+  font-size: 40px;
+  margin-left: 25px;
+  cursor: pointer;
+  display: none;
+  z-index: 10001;
+}
+
+/* Mobile menu toggle state */
+.menulist.open {
+  display: block;
+}
+
+#menu-icon.bx-x {
+  transform: rotate(90deg);
+}
+
+/* ********** F O O T E R ********** */
+
+footer {
+  width: 100%;
+  background-color: #111111;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+}
+
+.social-icons {
+  margin-bottom: 15px;
+}
+
+.menulist-footer {
+  margin-bottom: 15px;
+}
+
+footer p {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* ********** S O C I A L  I C O N S ********** */
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border: 1px solid var(--alt-color);
+  border-radius: 1.7rem;
+  color: var(--ann-color);
+  font-size: 18px;
+  margin-right: 12px;
+  transition: all 0.6s ease;
+}
+
+/* Hover effect for social icons */
+.social-icons a:hover {
+  transform: scale(1.06) rotate3d(0, 0, 1, 360deg);
+  color: var(--text-color);
+}
+
+/* ********** F O O T E R  M E N U  L I N K S ********** */
+
+.menulist-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menulist-footer a {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--other-color);
+  margin: 0 15px;
+  transition: all 0.6s ease;
+}
+
+/* Hover effect for footer menu links */
+.menulist-footer a:hover,
+.menulist-footer a.active {
+  color: var(--text-color);
+}
+
+/* ********** H I G H L I G H T E D  L I N E S ********** */
+
+.h-line {
+  display: inline-block;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid var(--alt-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  color: var(--ann-color);
+  border-radius: 1.7rem;
+  transition: all 0.6s ease;
+}
+
+/* Hover effect for highlighted lines */
+.h-line:hover {
+  color: var(--text-color);
+}
+
+/* ********** M E D I A  Q U E R I E S ********** */
+
+/* Tablet Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  header.sticky {
+    padding: 5px 5%;
+  }
+
+  section {
+    padding: 80px 5% 70px;
+  }
+
+  :root {
+    --h1-font: 4rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-img {
+    text-align: center;
+  }
+
+  .about-img img {
+    max-width: 450px;
+    height: 550px;
+    border-radius: 20%;
+    margin: 0 auto;
+  }
+
+  .home-text h1 {
+    font-size: var(--h1-font);
+  }
+
+  .home-text h4 {
+    font-size: 20px;
+  }
+
+  .btn1,
+  .btn2 {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 20px 5%;
+  }
+
+  .social-icons {
+    margin-bottom: 15px;
+  }
+
+  .menulist-footer {
+    margin-bottom: 15px;
+  }
+
+  footer p {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .social-icons a {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .menulist-footer a {
+    margin: 0 10px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 3%;
+  }
+
+  header.sticky {
+    padding: 5px 3%;
+  }
+
+  .logo img {
+    max-width: 50px;
+  }
+
+  .menulist {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 50px;
+    top: 0;
+    right: 0;
+    left: -100%;
+    flex-direction: column;
+    background: #000;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .menulist.open {
+    left: 0;
+  }
+
+  .menulist a {
+    margin: 25px 0;
+    font-size: 20px;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .home-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-text h4 {
+    font-size: 18px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-img img {
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .btn1,
+  .btn2 {
+    padding: 14px 22px;
+    font-size: 14px;
+  }
+
+  footer {
+    padding: 20px 3%;
+  }
+
+  .social-icons {
+    margin-bottom: 10px;
+  }
+
+  .menulist-footer {
+    margin-bottom: 10px;
+  }
+
+  footer p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .social-icons a {
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    margin-right: 8px;
+  }
+
+  .menulist-footer a {
+    margin: 0 8px;
+    font-size: 16px;
+  }
+}
+
+/* Smaller Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 10px 2%;
+  }
+
+  section {
+    padding: 70px 5% 60px;
+  }
+
+  :root {
+    --h1-font: 3rem;
+    --h2-font: 2.5rem;
+    --p-font: 0.9rem;
+  }
+
+  .home-text h1 {
+    font-size: var(--h1-font);
+  }
+
+  .home-text h4 {
+    font-size: 16px;
+  }
+
+  .about-img img {
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .btn1,
+  .btn2 {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 20px 2%;
+  }
+
+  .social-icons {
+    margin-bottom: 10px;
+  }
+
+  .menulist-footer {
+    margin-bottom: 10px;
+  }
+
+  footer p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    margin-right: 6px;
+  }
+
+  .menulist-footer a {
+    margin: 0 6px;
+    font-size: 14px;
+  }
+}
+
+/* Additional Media Queries (for screens up to 800px) */
+@media (max-width: 800px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .menulist {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 50px;
+    top: 0;
+    right: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .menulist.open {
+    left: 0;
+  }
+
+  .menulist a {
+    display: block;
+    padding: 0;
+    margin: 0px 0px 25px 0px;
+    font-size: 1.7rem;
+  }
+}

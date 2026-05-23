@@ -1,0 +1,229 @@
+/********** H O M E  S E C T I O N  S T Y L E S **********/
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  background: url(../Images/bg2.png) no-repeat center center;
+  background-size: cover;
+}
+
+.home-text {
+  padding-top: 30px;
+  flex: 1;
+}
+
+/* 
+  Main heading style for the home section: 
+  - Large, bold text with a gradient effect on the span
+*/
+.home-text h1 {
+  margin: 20px 0;
+  font-size: var(--h1-font);
+}
+
+.home-text h1 span {
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+  Subheading style for the home section: 
+  - Slightly smaller text with a standard color and spacing
+*/
+.home-text h4 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+/* 
+  Button container: 
+  - Flexbox layout with spacing and responsive wrapping
+*/
+.h-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn1,
+.btn2 {
+  padding: 18px 35px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 17px;
+  transition: all 0.7s ease;
+}
+
+/* 
+  Button 1 style: 
+  - Transparent with a border and text color
+  - Hover effect: increases letter spacing
+*/
+.btn1 {
+  background: transparent;
+  border: 1px solid var(--alt-color);
+  color: var(--text-color);
+}
+
+.btn1:hover {
+  letter-spacing: 2px;
+}
+
+/* 
+  Button 2 style: 
+  - Gradient background and solid text color 
+  - Hover effect: scales up slightly
+*/
+.btn2 {
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  color: var(--bg-color);
+}
+
+.btn2:hover {
+  transform: scale(1.07);
+}
+
+/********** M E D I A  Q U E R I E S  F O R  H O M E **********/
+
+/* Tablet Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px 10%;
+    background: none;
+  }
+
+  .home-bg {
+    width: 100%;
+    height: 30vh;
+    background: url(../Images/me.png) no-repeat center 0%;
+    background-size: cover;
+  }
+
+  .home-text {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-text h4 {
+    font-size: 1.5rem;
+  }
+
+  .h-btn {
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn1,
+  .btn2 {
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .home-bg {
+    width: 100%;
+    height: 40vh;
+    background: url(../Images/me.png) no-repeat center center;
+    background-size: cover;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text h4 {
+    font-size: 1.2rem;
+  }
+
+  .h-btn {
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn1,
+  .btn2 {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+/********** A B O U T  S E C T I O N  S T Y L E S **********/
+
+.about {
+  background: var(--bg-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2.3rem;
+}
+
+.about-img img {
+  width: 100%;
+  height: 700px;
+  max-width: 550px;
+  border-radius: 20%;
+  object-fit: cover;
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  border: 5px solid var(--ann-color);
+}
+
+/* 
+  Main heading style for the about section: 
+  - Bold, large text with a gradient effect on the span
+*/
+.about-text h2 {
+  margin: 22px 0;
+  font-size: var(--h2-font);
+}
+
+.about-text h2 span {
+  background: -webkit-linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+  Subheading style for the about section: 
+  - Standard text size with consistent line spacing
+*/
+.about-text h5 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* 
+  Paragraph text for about section: 
+  - Slightly smaller font, with specific color for readability
+*/
+.about-text p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 33px;
+  color: var(--ann-color);
+  margin-bottom: 35px;
+}
